@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import PropertyList from './components/PropertyList'
+import PropertyListSimple from './components/PropertyListSimple'
 import PropertyDetail from './components/PropertyDetail'
 import EventsByYear from './components/EventsByYear'
 import EventDetail from './components/EventDetail'
@@ -46,9 +46,9 @@ function App() {
         </header>
         <main className="app-main">
           <Routes>
-            <Route path="/" element={<PropertyList properties={propertyData.properties} />} />
+            <Route path="/" element={<PropertyListSimple properties={propertyData.properties} />} />
             <Route path="/by-year" element={<EventsByYear properties={propertyData.properties} />} />
-            <Route path="/properties" element={<PropertyList properties={propertyData.properties} viewMode="property" />} />
+            <Route path="/properties" element={<PropertyListSimple properties={propertyData.properties} viewMode="property" />} />
             <Route path="/property/:id" element={<PropertyDetail properties={propertyData.properties} />} />
             <Route path="/event/:propertyId/:year" element={<EventDetail properties={propertyData.properties} />} />
           </Routes>

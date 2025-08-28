@@ -1,23 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+// import L from 'leaflet'
+// import 'leaflet/dist/leaflet.css'
 import './PropertyList.css'
 
-// Fix for default markers
-import icon from 'leaflet/dist/images/marker-icon.png'
-import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+// // Fix for default markers
+// import icon from 'leaflet/dist/images/marker-icon.png'
+// import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-})
+// let DefaultIcon = L.icon({
+//   iconUrl: icon,
+//   shadowUrl: iconShadow,
+//   iconSize: [25, 41],
+//   iconAnchor: [12, 41],
+//   popupAnchor: [1, -34],
+//   shadowSize: [41, 41]
+// })
 
-L.Marker.prototype.options.icon = DefaultIcon
+// L.Marker.prototype.options.icon = DefaultIcon
 
 const PropertyList = ({ properties, viewMode = 'parties' }) => {
   const mapRef = useRef(null)
@@ -187,31 +187,33 @@ const PropertyList = ({ properties, viewMode = 'parties' }) => {
   })
 
   useEffect(() => {
-    if (!mapRef.current || mapInstanceRef.current) return
+    // Map disabled for now - Leaflet import issue
+    return
+    // if (!mapRef.current || mapInstanceRef.current) return
 
-    // Initialize map
-    const map = L.map(mapRef.current).setView([44.9778, -93.2650], 10)
-    mapInstanceRef.current = map
+    // // Initialize map
+    // const map = L.map(mapRef.current).setView([44.9778, -93.2650], 10)
+    // mapInstanceRef.current = map
 
-    // Add tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map)
+    // // Add tile layer
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //   attribution: '© OpenStreetMap contributors'
+    // }).addTo(map)
 
-    // Add markers for each filtered property
-    filteredProperties.forEach(property => {
-      if (property.coordinates) {
-        const marker = L.marker([property.coordinates.lat, property.coordinates.lng])
-          .addTo(map)
-          .bindPopup(`
-            <div class="map-popup">
-              <h3>${property.address}</h3>
-              <p>${property.suites.length} suites</p>
-              <a href="/property/${property.id}">View Details</a>
-            </div>
-          `)
-      }
-    })
+    // // Add markers for each filtered property
+    // filteredProperties.forEach(property => {
+    //   if (property.coordinates) {
+    //     const marker = L.marker([property.coordinates.lat, property.coordinates.lng])
+    //       .addTo(map)
+    //       .bindPopup(`
+    //         <div class="map-popup">
+    //           <h3>${property.address}</h3>
+    //           <p>${property.suites.length} suites</p>
+    //           <a href="/property/${property.id}">View Details</a>
+    //         </div>
+    //       `)
+    //   }
+    // })
 
     return () => {
       if (mapInstanceRef.current) {

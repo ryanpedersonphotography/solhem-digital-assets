@@ -18,9 +18,11 @@
         "parties": [
           {
             "year": 2025,
-            "date": "2025-06-15",
+            "date": "2025-09-25",
+            "time": "5:30pm-9:00pm",
             "attendees": null,
-            "description": "Annual Summer Party",
+            "description": "Food Truck Party - Coming Soon",
+            "upcoming": true,
             "assets": {
               "top": [],
               "all": []
@@ -97,9 +99,10 @@
         "parties": [
           {
             "year": 2025,
-            "date": "2025-07-12",
+            "date": "2025-08-07",
+            "time": "5:30pm-9:00pm",
             "attendees": null,
-            "description": "Annual Summer Party",
+            "description": "Food Truck Party",
             "assets": {
               "top": [
                 "parties/2025/the-fred/top/the-fred-2025-top-001.jpg",
@@ -885,9 +888,11 @@
         "parties": [
           {
             "year": 2025,
-            "date": "2025-08-10",
+            "date": "2025-09-18",
+            "time": "5:30pm-9:00pm",
             "attendees": null,
-            "description": "Annual Summer Party",
+            "description": "Food Truck Party - Coming Soon",
+            "upcoming": true,
             "assets": {
               "top": [],
               "all": []
