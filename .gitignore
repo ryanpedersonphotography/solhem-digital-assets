@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Netlify
+.netlify
+netlify/functions/.netlify
+
+# Video files (too large for git)
+public/assets/*/Drone_Videos/
+public/assets/*/Property_Videos/
+
+# Party photo assets (too large for git - will use Netlify deploy)
+public/assets/parties/
+
+# Temporary files
+audit-results.json
+VIDEO_LIST.txt

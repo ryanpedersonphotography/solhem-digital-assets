@@ -1,0 +1,240 @@
+.event-detail {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.event-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #1565c0;
+}
+
+.event-title h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.event-date {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.download-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.download-controls button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-download-all {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-download-all:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.btn-download-selected {
+  background: #2196f3;
+  color: white;
+}
+
+.btn-download-selected:hover:not(:disabled) {
+  background: #1976d2;
+}
+
+.btn-select-mode {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-select-mode:hover {
+  background: #f57c00;
+}
+
+.btn-clear {
+  background: #f44336;
+  color: white;
+}
+
+.btn-clear:hover {
+  background: #da190b;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.asset-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab {
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab:hover {
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.tab.active {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+  background-color: #e3f2fd;
+}
+
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.asset-item {
+  position: relative;
+  aspect-ratio: 1;
+  background: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asset-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.asset-item.selected {
+  outline: 3px solid #2196f3;
+  outline-offset: -3px;
+}
+
+.asset-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selection-overlay {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  padding: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.selection-overlay input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .event-header {
+    flex-direction: column;
+  }
+  
+  .download-controls {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .download-controls button {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .assets-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
